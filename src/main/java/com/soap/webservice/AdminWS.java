@@ -5,7 +5,6 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
 import com.soap.entity.Packet;
-import com.soap.entity.Route;
 
 @WebService
 @SOAPBinding
@@ -21,5 +20,5 @@ public interface AdminWS {
 	void registerPacketForTracking(long packetId);
 
 	@WebMethod
-	void addNewRouteToPacket(Route route, Packet pack);
+	void addNewRouteToPacket(Packet pack);
 }

@@ -41,6 +41,8 @@ public class UserRepositoryTest {
 
 		packet.setSenderCity("Bucharest");
 		packet.setTracking(true);
+		packet.getRoute().put("Timisoara", "10/12/2014");
+		packet.getRoute().put("Cluj", "11/12/2017");
 
 		receiver = userRepository.save(receiver);
 		sender = userRepository.save(sender);

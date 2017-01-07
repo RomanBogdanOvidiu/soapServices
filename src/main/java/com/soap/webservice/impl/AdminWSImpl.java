@@ -5,7 +5,6 @@ import javax.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.soap.entity.Packet;
-import com.soap.entity.Route;
 import com.soap.repository.PacketRepository;
 import com.soap.repository.UserRepository;
 import com.soap.webservice.AdminWS;
@@ -38,8 +37,7 @@ public class AdminWSImpl implements AdminWS {
 	}
 
 	@Override
-	public void addNewRouteToPacket(Route route, Packet pack) {
-		route.setPack(pack);
+	public void addNewRouteToPacket(Packet pack) {
 
 	}
 

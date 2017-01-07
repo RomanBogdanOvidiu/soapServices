@@ -1,6 +1,10 @@
 package com.soap.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,6 +40,17 @@ public class Packet {
 
 	@Column(name = "tracking")
 	private boolean tracking;
+
+	@ElementCollection
+	private Map<String, String> route;
+
+	public Map<String, String> getRoute() {
+		return route;
+	}
+
+	public void setRoute(Map<String, String> route) {
+		this.route = route;
+	}
 
 	public long getId() {
 		return id;
@@ -98,6 +113,7 @@ public class Packet {
 	}
 
 	public void setTracking(boolean tracking) {
+		route = new HashMap<>();
 		this.tracking = tracking;
 	}
 

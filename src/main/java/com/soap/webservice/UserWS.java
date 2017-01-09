@@ -17,12 +17,6 @@ public interface UserWS {
 	User authenticateUser(String username, String password);
 
 	@WebMethod
-	List<Packet> getAllMyReceivedPackets(User user);
-
-	@WebMethod
-	List<Packet> getAllMySentPackets(User user);
-
-	@WebMethod
 	List<User> findAllUsers();
 
 	@WebMethod

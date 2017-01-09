@@ -1,15 +1,17 @@
 package com.soap.entity;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,7 @@ public class Packet {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "packet_id", unique = true, nullable = false)
 	private long id;
 
 	@Column(name = "pack_name")
@@ -41,15 +44,30 @@ public class Packet {
 	@Column(name = "tracking")
 	private boolean tracking;
 
-	@ElementCollection
-	private Map<String, String> route;
+	@OneToMany(mappedBy = "routePack", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	private List<Route> packRoute = new ArrayList<>();
 
-	public Map<String, String> getRoute() {
-		return route;
+	public Packet() {
 	}
 
-	public void setRoute(Map<String, String> route) {
-		this.route = route;
+	public Packet(String packName, String description, User sender, User receiver, String senderCity,
+			String destinationCity, boolean tracking) {
+		super();
+		this.packName = packName;
+		this.description = description;
+		this.sender = sender;
+		this.receiver = receiver;
+		this.senderCity = senderCity;
+		this.destinationCity = destinationCity;
+		this.tracking = tracking;
+	}
+
+	public List<Route> getPackRoute() {
+		return packRoute;
+	}
+
+	public void setPackRoute(List<Route> packRoute) {
+		this.packRoute = packRoute;
 	}
 
 	public long getId() {
@@ -113,7 +131,6 @@ public class Packet {
 	}
 
 	public void setTracking(boolean tracking) {
-		route = new HashMap<>();
 		this.tracking = tracking;
 	}
 

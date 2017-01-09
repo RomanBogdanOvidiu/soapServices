@@ -37,16 +37,6 @@ public class UserWSImpl implements UserWS {
 	}
 
 	@Override
-	public List<Packet> getAllMyReceivedPackets(User u) {
-		return u.getPacksReceived();
-	}
-
-	@Override
-	public List<Packet> getAllMySentPackets(User u) {
-		return u.getPacksSent();
-	}
-
-	@Override
 	public List<User> findAllUsers() {
 		return (List<User>) userRepository.findAll();
 	}

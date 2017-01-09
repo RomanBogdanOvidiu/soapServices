@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,12 +23,6 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	@OneToMany(mappedBy = "sender")
-	private List<Packet> packsSent;
-
-	@OneToMany(mappedBy = "receiver")
-	private List<Packet> packsReceived;
-
 	public User() {
 	}
 
@@ -39,8 +32,12 @@ public class User {
 		this.username = username;
 		this.userRole = userRole;
 		this.password = password;
-		this.packsSent = packsSent;
-		this.packsReceived = packsReceived;
+	}
+
+	public User(String username, UserRole userRole, String password) {
+		this.username = username;
+		this.userRole = userRole;
+		this.password = password;
 	}
 
 	public String getUsername() {
@@ -65,21 +62,5 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public List<Packet> getPacksSent() {
-		return packsSent;
-	}
-
-	public void setPacksSent(List<Packet> packsSent) {
-		this.packsSent = packsSent;
-	}
-
-	public List<Packet> getPacksReceived() {
-		return packsReceived;
-	}
-
-	public void setPacksReceived(List<Packet> packsReceived) {
-		this.packsReceived = packsReceived;
 	}
 }

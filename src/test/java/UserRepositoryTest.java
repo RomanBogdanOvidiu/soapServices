@@ -1,7 +1,3 @@
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,9 +7,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.soap.Application;
 import com.soap.entity.Packet;
+import com.soap.entity.Route;
 import com.soap.entity.User;
 import com.soap.entity.UserRole;
 import com.soap.repository.PacketRepository;
+import com.soap.repository.RouteRepository;
 import com.soap.repository.UserRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -26,37 +24,35 @@ public class UserRepositoryTest {
 	@Autowired
 	private PacketRepository packetRepository;
 
+	@Autowired
+	private RouteRepository routeRepository;
+
 	User receiver;
 	User sender;
 	Packet packet;
+	Route route;
 
 	@Before
 	public void saveUser() {
-		receiver = new User("Laura", UserRole.ADMIN, "parola", new ArrayList<>(), new ArrayList<>());
-		sender = new User("Bogdan", UserRole.ADMIN, "parola", new ArrayList<>(), new ArrayList<>());
-		packet = new Packet();
-		packet.setDescription("ALIBABABABA");
-		packet.setDestinationCity("Cluj");
-		packet.setPackName("UnTelefon");
-
-		packet.setSenderCity("Bucharest");
-		packet.setTracking(true);
-		packet.getRoute().put("Timisoara", "10/12/2014");
-		packet.getRoute().put("Cluj", "11/12/2017");
+		// route = new ArrayList<>();
+		receiver = new User("Laura", UserRole.ADMIN, "parola");
+		sender = new User("Bogdan", UserRole.ADMIN, "parola");
 
 		receiver = userRepository.save(receiver);
 		sender = userRepository.save(sender);
 
-		packet.setReceiver(receiver);
-		packet.setSender(sender);
-
-		packet = packetRepository.save(packet);
 	}
 
 	@Test
 	public void getUser() {
-		User userica = userRepository.findUserByUsername("Laura");
-		assertEquals("parola", userica.getPassword());
 
+		packet = new Packet("Creioane", "Foarte colorate", sender, receiver, "Cluj", "Floresti", false);
+		packet = packetRepository.save(packet);
+
+		route = new Route("12.01.2016", "Manastru", packet);
+		route = routeRepository.save(route);
+
+		packet.getPackRoute().add(route);
+		packet = packetRepository.save(packet);
 	}
 }

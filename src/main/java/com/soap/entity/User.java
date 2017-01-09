@@ -6,21 +6,34 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(schema = "assign4", name = "user")
+@NamedQueries({ @NamedQuery(name = User.FIND_USER_BY_USERNAME, query = User.QUERY_FIND_BY) })
 public class User {
 
+	public static final String FIND_USER_BY_USERNAME = "findUserByUsername";
+	public static final String QUERY_FIND_BY = "Select u from User u where u.username = :" + User.PARAM_USERNAME;
+	public static final String PARAM_USERNAME = "username";
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
+	@Column(name = "username", unique = true, nullable = false)
 	private String username;
 
-	@Column(name = "userRole")
+	@Column(name = "userRole", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private UserRole userRole;
 
-	@Column(name = "password")
+	@Column(name = "password", nullable = false)
 	private String password;
 
 	public User() {
@@ -32,6 +45,14 @@ public class User {
 		this.username = username;
 		this.userRole = userRole;
 		this.password = password;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public User(String username, UserRole userRole, String password) {

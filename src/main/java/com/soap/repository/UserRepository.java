@@ -1,13 +1,35 @@
 package com.soap.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import java.io.Serializable;
+
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceException;
+import javax.persistence.Query;
+
+import org.hibernate.Session;
 
 import com.soap.entity.User;
+import com.soap.util.HibernateUtil;
 
-@Repository
-public interface UserRepository extends CrudRepository<User, String> {
+public class UserRepository implements Serializable {
 
-	User findUserByUsername(String username);
+	private static final long serialVersionUID = 1L;
+	Session sessionFactory;
 
+	public UserRepository() {
+		sessionFactory = HibernateUtil.getSessionFactory().openSession();
+	}
+
+	public User getUserByUsername(String username) throws NoResultException {
+		Session sessionFactory = HibernateUtil.getSessionFactory().openSession();
+		try {
+			Query cq = sessionFactory.getNamedQuery(User.FIND_USER_BY_USERNAME);
+			cq.setParameter(User.PARAM_USERNAME, username);
+			return (User) cq.getSingleResult();
+		} catch (PersistenceException e) {
+			e.printStackTrace();
+			System.out.println("crapat find by username");
+		}
+		return null;
+	}
 }

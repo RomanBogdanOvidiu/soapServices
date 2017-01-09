@@ -20,11 +20,14 @@ public interface UserWS {
 	List<User> findAllUsers();
 
 	@WebMethod
-	boolean checkStatusByName(String name);
+	boolean checkStatus(long name);
 
 	@WebMethod
-	Packet searchForPacket(String packetName);
+	Packet searchForPacket(long packetName);
 
 	@WebMethod
 	User registerUser(User user);
+
+	@WebMethod
+	List<Packet> getAllPackets(String username);
 }

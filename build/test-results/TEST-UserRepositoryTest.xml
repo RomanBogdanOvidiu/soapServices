@@ -1,91 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-01-09T13:17:53" hostname="DESKTOP-1O9K3SR" time="0.24">
+<testsuite name="UserRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-01-09T20:49:50" hostname="DESKTOP-1O9K3SR" time="0.094">
   <properties/>
-  <testcase name="getUser" classname="UserRepositoryTest" time="0.24"/>
-  <system-out><![CDATA[15:17:44.251 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class UserRepositoryTest]
-15:17:44.260 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-15:17:44.271 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-15:17:44.293 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [UserRepositoryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-15:17:44.314 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [UserRepositoryTest], using SpringBootContextLoader
-15:17:44.337 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [UserRepositoryTest]: class path resource [UserRepositoryTest-context.xml] does not exist
-15:17:44.338 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [UserRepositoryTest]: class path resource [UserRepositoryTestContext.groovy] does not exist
-15:17:44.338 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [UserRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-15:17:44.469 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [UserRepositoryTest]
-15:17:44.523 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [UserRepositoryTest]: using defaults.
-15:17:44.535 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-15:17:44.571 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@73f517d3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6f8aa690, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@385ae9d0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@33bb1e5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@582b65de, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@622fe66d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@dd49791, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@533eab57, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@50b8217b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4db9b98f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@64f8c7b6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@42babc6d]
-15:17:44.575 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [UserRepositoryTest]
-15:17:44.576 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [UserRepositoryTest]
-15:17:44.577 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [UserRepositoryTest]
-15:17:44.578 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [UserRepositoryTest]
-15:17:44.587 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@57b39776 testClass = UserRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@693a00a9 testClass = UserRepositoryTest, locations = '{}', classes = '{class com.soap.Application, class com.soap.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@963bfd9, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@33db17a7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@26989ee7], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
-15:17:44.588 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [UserRepositoryTest]
-15:17:44.589 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [UserRepositoryTest]
-15:17:44.679 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-15:17:44.679 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-15:17:44.681 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-15:17:44.683 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
-15:17:44.684 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v1.4.3.RELEASE)
-
-2017-01-09 15:17:45.352  INFO 6472 --- [    Test worker] UserRepositoryTest                       : Starting UserRepositoryTest on DESKTOP-1O9K3SR with PID 6472 (started by Bogdan in C:\Users\Bogdan\Documents\DS-assign4\SoapService4)
-2017-01-09 15:17:45.353  INFO 6472 --- [    Test worker] UserRepositoryTest                       : No active profile set, falling back to default profiles: default
-2017-01-09 15:17:45.423  INFO 6472 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@31ccdf2: startup date [Mon Jan 09 15:17:45 EET 2017]; root of context hierarchy
-2017-01-09 15:17:48.167  INFO 6472 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$232806ad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2017-01-09 15:17:48.244  INFO 6472 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2017-01-09 15:17:48.279  INFO 6472 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7e9041ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2017-01-09 15:17:49.238  INFO 6472 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2017-01-09 15:17:49.271  INFO 6472 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2017-01-09 15:17:49.436  INFO 6472 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
-2017-01-09 15:17:49.440  INFO 6472 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, hibernate.show_sql=true, hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.auto=create}
-2017-01-09 15:17:49.441  INFO 6472 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
-2017-01-09 15:17:49.507  INFO 6472 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2017-01-09 15:17:49.886  INFO 6472 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2017-01-09 15:17:50.648  INFO 6472 --- [    Test worker] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
-Hibernate: alter table packet drop foreign key FK7mdealgxw5sb9ey459f29gr9o
-Hibernate: alter table packet drop foreign key FKklsy773madjtp35u1xqowgirq
-Hibernate: alter table route drop foreign key FKe0661x1ekbrs50htqptyvb04
-Hibernate: drop table if exists packet
-Hibernate: drop table if exists route
-Hibernate: drop table if exists user
-Hibernate: create table packet (packet_id bigint not null auto_increment, description varchar(255), destination_city varchar(255), pack_name varchar(255), sender_city varchar(255), tracking bit, receiver_username varchar(255), sender_username varchar(255), primary key (packet_id))
-Hibernate: create table route (id bigint not null auto_increment, city varchar(255), date varchar(255), packet_id bigint not null, primary key (id))
-Hibernate: create table user (username varchar(255) not null, password varchar(255), user_role varchar(255), primary key (username))
-Hibernate: alter table packet add constraint FK7mdealgxw5sb9ey459f29gr9o foreign key (receiver_username) references user (username)
-Hibernate: alter table packet add constraint FKklsy773madjtp35u1xqowgirq foreign key (sender_username) references user (username)
-Hibernate: alter table route add constraint FKe0661x1ekbrs50htqptyvb04 foreign key (packet_id) references packet (packet_id)
-2017-01-09 15:17:51.288  INFO 6472 --- [    Test worker] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
-2017-01-09 15:17:51.337  INFO 6472 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2017-01-09 15:17:52.577  INFO 6472 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@31ccdf2: startup date [Mon Jan 09 15:17:45 EET 2017]; root of context hierarchy
-2017-01-09 15:17:52.692  INFO 6472 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2017-01-09 15:17:52.694  INFO 6472 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-01-09 15:17:52.759  INFO 6472 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2017-01-09 15:17:52.760  INFO 6472 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2017-01-09 15:17:52.814  INFO 6472 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2017-01-09 15:17:53.193  WARN 6472 --- [    Test worker] arterDeprecationWarningAutoConfiguration : spring-boot-starter-ws is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-web-services
-2017-01-09 15:17:53.304  INFO 6472 --- [    Test worker] UserRepositoryTest                       : Started UserRepositoryTest in 8.609 seconds (JVM running for 10.177)
-Hibernate: select user0_.username as username1_2_0_, user0_.password as password2_2_0_, user0_.user_role as user_rol3_2_0_ from user user0_ where user0_.username=?
-Hibernate: insert into user (password, user_role, username) values (?, ?, ?)
-Hibernate: select user0_.username as username1_2_0_, user0_.password as password2_2_0_, user0_.user_role as user_rol3_2_0_ from user user0_ where user0_.username=?
-Hibernate: insert into user (password, user_role, username) values (?, ?, ?)
-Hibernate: select user_.username, user_.password as password2_2_, user_.user_role as user_rol3_2_ from user user_ where user_.username=?
-Hibernate: select user_.username, user_.password as password2_2_, user_.user_role as user_rol3_2_ from user user_ where user_.username=?
-Hibernate: insert into packet (description, destination_city, pack_name, receiver_username, sender_username, sender_city, tracking) values (?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into route (city, date, packet_id) values (?, ?, ?)
-Hibernate: select packet0_.packet_id as packet_i1_0_0_, packet0_.description as descript2_0_0_, packet0_.destination_city as destinat3_0_0_, packet0_.pack_name as pack_nam4_0_0_, packet0_.receiver_username as receiver7_0_0_, packet0_.sender_username as sender_u8_0_0_, packet0_.sender_city as sender_c5_0_0_, packet0_.tracking as tracking6_0_0_ from packet packet0_ where packet0_.packet_id=?
-Hibernate: select user0_.username as username1_2_0_, user0_.password as password2_2_0_, user0_.user_role as user_rol3_2_0_ from user user0_ where user0_.username=?
-Hibernate: select user0_.username as username1_2_0_, user0_.password as password2_2_0_, user0_.user_role as user_rol3_2_0_ from user user0_ where user0_.username=?
-Hibernate: select route0_.id as id1_1_0_, route0_.city as city2_1_0_, route0_.date as date3_1_0_, route0_.packet_id as packet_i4_1_0_ from route route0_ where route0_.id=?
+  <testcase name="getUser" classname="UserRepositoryTest" time="0.094"/>
+  <system-out><![CDATA[Hibernate: 
+    select
+        this_.packet_id as packet_i1_0_3_,
+        this_.description as descript2_0_3_,
+        this_.destination_city as destinat3_0_3_,
+        this_.pack_name as pack_nam4_0_3_,
+        this_.receiver_id as receiver7_0_3_,
+        this_.sender_id as sender_i8_0_3_,
+        this_.sender_city as sender_c5_0_3_,
+        this_.tracking as tracking6_0_3_,
+        packroute2_.packet_id as packet_i4_1_5_,
+        packroute2_.id as id1_1_5_,
+        packroute2_.id as id1_1_0_,
+        packroute2_.city as city2_1_0_,
+        packroute2_.date as date3_1_0_,
+        packroute2_.packet_id as packet_i4_1_0_,
+        user3_.id as id1_2_1_,
+        user3_.password as password2_2_1_,
+        user3_.userRole as userRole3_2_1_,
+        user3_.username as username4_2_1_,
+        user4_.id as id1_2_2_,
+        user4_.password as password2_2_2_,
+        user4_.userRole as userRole3_2_2_,
+        user4_.username as username4_2_2_ 
+    from
+        packet this_ 
+    left outer join
+        route packroute2_ 
+            on this_.packet_id=packroute2_.packet_id 
+    left outer join
+        user user3_ 
+            on this_.receiver_id=user3_.id 
+    left outer join
+        user user4_ 
+            on this_.sender_id=user4_.id
+Auto android
+Auto android
 ]]></system-out>
-  <system-err><![CDATA[Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+  <system-err><![CDATA[Jan 09, 2017 10:49:48 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {5.2.6.Final}
+Jan 09, 2017 10:49:48 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+Jan 09, 2017 10:49:49 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+Jan 09, 2017 10:49:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+Jan 09, 2017 10:49:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/assign4]
+Jan 09, 2017 10:49:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=root, password=****, autocommit=true}
+Jan 09, 2017 10:49:49 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: true
+Jan 09, 2017 10:49:49 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections <init>
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+Jan 09, 2017 10:49:49 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Jan 09, 2017 10:49:50 PM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+Jan 09, 2017 10:49:50 PM org.hibernate.internal.SessionImpl createCriteria
+WARN: HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
 ]]></system-err>
 </testsuite>

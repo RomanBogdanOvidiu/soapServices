@@ -18,7 +18,7 @@ public interface AdminWS {
 	Packet addPacket(Packet pack);
 
 	@WebMethod
-	void registerPacketForTracking(long packetId);
+	void registerPacketForTracking(Packet pack);
 
 	@WebMethod
 	void addNewRouteToPacket(Route r, Packet p);

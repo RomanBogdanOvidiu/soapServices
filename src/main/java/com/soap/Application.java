@@ -1,13 +1,15 @@
 package com.soap;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import javax.xml.ws.Endpoint;
 
-@SpringBootApplication
+import com.soap.webservice.impl.AdminWSImpl;
+import com.soap.webservice.impl.UserWSImpl;
+
 public class Application {
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(Application.class, args);
+		Endpoint.publish("http://localhost:8888/wsadmin", new AdminWSImpl());
+		Endpoint.publish("http://localhost:8888/wsuser", new UserWSImpl());
 	}
 
 }

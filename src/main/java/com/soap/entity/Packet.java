@@ -3,7 +3,6 @@ package com.soap.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,14 +18,14 @@ import javax.persistence.Table;
 public class Packet {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "packet_id", unique = true, nullable = false)
 	private long id;
 
-	@Column(name = "pack_name")
+	@Column(name = "pack_name", nullable = false)
 	private String packName;
 
-	@Column(name = "description")
+	@Column(name = "description", nullable = false)
 	private String description;
 
 	@ManyToOne
@@ -35,16 +34,16 @@ public class Packet {
 	@ManyToOne
 	private User receiver;
 
-	@Column(name = "sender_city")
+	@Column(name = "sender_city", nullable = false)
 	private String senderCity;
 
-	@Column(name = "destination_city")
+	@Column(name = "destination_city", nullable = false)
 	private String destinationCity;
 
-	@Column(name = "tracking")
+	@Column(name = "tracking", nullable = false)
 	private boolean tracking;
 
-	@OneToMany(mappedBy = "routePack", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "routePack", fetch = FetchType.EAGER)
 	private List<Route> packRoute = new ArrayList<>();
 
 	public Packet() {

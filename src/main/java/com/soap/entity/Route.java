@@ -2,7 +2,6 @@ package com.soap.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,17 +14,17 @@ import javax.persistence.Table;
 public class Route {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column
+	@Column(nullable = false)
 	private String date;
 
-	@Column
+	@Column(nullable = false)
 	private String city;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "packet_id", nullable = false)
+	@ManyToOne
+	@JoinColumn(name = "packet_id")
 	private Packet routePack;
 
 	public Route() {

@@ -8,13 +8,14 @@ import com.soap.entity.User;
 import com.soap.entity.UserRole;
 import com.soap.repository.BaseRepository;
 import com.soap.repository.UserRepository;
-import com.soap.webservice.impl.UserWSImpl;
+import com.soap.webservice.AdminWS;
+import com.soap.webservice.impl.AdminWSImpl;
 
 public class UserRepositoryTest {
 
-	UserWSImpl userws = new UserWSImpl();
 	private BaseRepository bs = new BaseRepository();
 	UserRepository ur = new UserRepository();
+	AdminWS admws = new AdminWSImpl();
 	User receiver;
 	User sender;
 	Packet packet;
@@ -31,15 +32,12 @@ public class UserRepositoryTest {
 	public void getUser() {
 		// User rox = ur.getUserByUsername("rox");
 		// User bog = ur.getUserByUsername("bog");
-		// packet = new Packet("Navigator", "Auto android", rox, bog, "Cluj",
-		// "Timisoara", false);
-		// Route route = new Route("12.24.1222", "Cina", bs.get(Packet.class,
-		// 1));
+		// AdminWS adminWS = new AdminWSImpl();
+		// Packet p = new Packet("packetmare", "taremare",
+		// ur.getUserByUsername("bog"), ur.getUserByUsername("rox"),
+		// "oras1", "oras2", false);
+		// Route route = new Route("data", "oras3", bs.get(Packet.class, 1));
 		// bs.save(route);
-
-		for (Packet p : userws.getAllPackets("bog")) {
-			System.out.println(p.getDescription());
-		}
 	}
 
 }

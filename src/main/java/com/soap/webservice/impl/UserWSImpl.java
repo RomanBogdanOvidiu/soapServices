@@ -1,12 +1,13 @@
 package com.soap.webservice.impl;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.jws.WebService;
 
 import com.soap.entity.Packet;
+import com.soap.entity.PacketList;
 import com.soap.entity.User;
+import com.soap.entity.UserList;
 import com.soap.entity.UserRole;
 import com.soap.repository.BaseRepository;
 import com.soap.repository.UserRepository;
@@ -34,8 +35,10 @@ public class UserWSImpl implements UserWS {
 	}
 
 	@Override
-	public List<User> findAllUsers() {
-		return bs.getAll(User.class);
+	public UserList findAllUsers() {
+		UserList userList = new UserList();
+		userList.setUser((ArrayList<User>) bs.getAll(User.class));
+		return userList;
 	}
 
 	@Override
@@ -59,13 +62,19 @@ public class UserWSImpl implements UserWS {
 	}
 
 	@Override
-	public List<Packet> getAllPackets(String username) {
-		List<Packet> finalList = new ArrayList<>();
+	public PacketList findMyPackets(String username) {
+		PacketList finalList = new PacketList();
 		for (Packet p : bs.getAll(Packet.class)) {
 			if (p.getSender().getUsername().equals(username) || p.getReceiver().getUsername().equals(username)) {
-				finalList.add(p);
+				finalList.getPacketList().add(p);
 			}
 		}
 		return finalList;
 	}
+
+	@Override
+	public User getTheUser(String user) {
+		return userR.getUserByUsername(user);
+	}
+
 }

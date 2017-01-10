@@ -64,8 +64,12 @@ public class BaseRepository implements Serializable {
 		sessionFactory.saveOrUpdate(o);
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> List<T> getAll(final Class<T> type) {
+		sessionFactory = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx2 = sessionFactory.beginTransaction();
 		final Criteria crit = sessionFactory.createCriteria(type);
+		tx2.commit();
 		return crit.list();
 	}
 }

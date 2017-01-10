@@ -1,13 +1,13 @@
 package com.soap.webservice;
 
-import java.util.List;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
 import com.soap.entity.Packet;
+import com.soap.entity.PacketList;
 import com.soap.entity.User;
+import com.soap.entity.UserList;
 
 @WebService
 @SOAPBinding
@@ -17,7 +17,7 @@ public interface UserWS {
 	User authenticateUser(String username, String password);
 
 	@WebMethod
-	List<User> findAllUsers();
+	UserList findAllUsers();
 
 	@WebMethod
 	boolean checkStatus(long name);
@@ -29,5 +29,8 @@ public interface UserWS {
 	User registerUser(User user);
 
 	@WebMethod
-	List<Packet> getAllPackets(String username);
+	PacketList findMyPackets(String username);
+
+	@WebMethod
+	User getTheUser(String user);
 }

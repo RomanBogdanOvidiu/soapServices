@@ -5,6 +5,7 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
 import com.soap.entity.Packet;
+import com.soap.entity.PacketList;
 import com.soap.entity.Route;
 
 @WebService
@@ -22,4 +23,7 @@ public interface AdminWS {
 
 	@WebMethod
 	void addNewRouteToPacket(Route r, Packet p);
+
+	@WebMethod
+	PacketList findAllPackets();
 }

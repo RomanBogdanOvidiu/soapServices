@@ -2,7 +2,6 @@ package com.soap.repository;
 
 import java.io.Serializable;
 
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
@@ -20,7 +19,7 @@ public class UserRepository implements Serializable {
 		sessionFactory = HibernateUtil.getSessionFactory().openSession();
 	}
 
-	public User getUserByUsername(String username) throws NoResultException {
+	public User getUserByUsername(String username) {
 		Session sessionFactory = HibernateUtil.getSessionFactory().openSession();
 		try {
 			Query cq = sessionFactory.getNamedQuery(User.FIND_USER_BY_USERNAME);
